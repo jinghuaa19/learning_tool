@@ -337,6 +337,8 @@ MD5，SHA
 
 ### <2> 机器学习
 
+[大数据基础](https://github.com/TarrySingh/Artificial-Intelligence-Deep-Learning-Machine-Learning-Tutorials)
+
 #### 1. K近邻-[KNN](https://www.jianshu.com/p/3f81f2ae781d)
 **算法思想**：它的本质是让输入与给定的数据集进行距离的计算。如果最近的点大部分为某一类（比如说是A），则判定为A类。kNN中的k，就是跟输入比较的点的数量。这个是作为算法的一个参数。当然距离的计算方法有很多种，比如：欧拉距离、明科夫斯基距离
 
@@ -482,7 +484,7 @@ binwalk、gdb、objdump、nasm、dd、pwntool
 
 
 
-## 0x02 平台与架构
+## 0x02 AI与大数据
 
 ### <1> 大数据平台
 
@@ -504,6 +506,10 @@ binwalk、gdb、objdump、nasm、dd、pwntool
 * 机器学习与深度学习平台：[Spark](https://www.tutorialspoint.com/apache_spark/)
 
 ### <2> 数据分析工具
+
+AI [基础](https://github.com/TarrySingh/Artificial-Intelligence-Deep-Learning-Machine-Learning-Tutorials)
+
+Tensorflow [基础](https://github.com/aymericdamien/TensorFlow-Examples)
 
 #### 1. numpy 
 
@@ -553,15 +559,25 @@ NumPy的数组类被称为ndarray。别名为 `array`。 请注意，`numpy.arra
 
 #### 4. matplotlib
 
+#### 5. NLP工具
+
+Python 实现 [词嵌入](https://github.com/buomsoo-kim/Word-embedding-with-Python)
+
 
 
 
 
 ## 0x03 大数据与网络安全 Doing
 
-### <0> 大数据网络安全架构 : Zeek-Kafka+ELK
+### <0> 大数据网络安全架构 : 
 
-[基础架构](https://www.freebuf.com/sectool/179757.html)
+Zeek-Kafka+ELK [基础架构](https://www.freebuf.com/sectool/179757.html)
+
+AI [基础](https://github.com/TarrySingh/Artificial-Intelligence-Deep-Learning-Machine-Learning-Tutorials)
+
+Tensorflow [基础](https://github.com/aymericdamien/TensorFlow-Examples)
+
+
 
 ### <1> 异常检测 : 离群点
 
