@@ -2,7 +2,17 @@
 
 ## 0x00 基础知识
 
-### <1> Linux - TODO
+### <1> Linux
+
+#### 1. Linux 参考文档
+* [Tutoial - run-cn](https://www.runoob.com/linux/linux-tutorial.html)
+* [Tutoial - w3c-cn](https://www.w3cschool.cn/linux/?)
+* [Unix Tutoial - eng](https://www.tutorialspoint.com/unix/)
+* RHCE [Study Guide](https://www.computernetworkingnotes.com/rhce-study-guide/)
+
+#### 2. 基础概念与常用命令
+
+
 ### <2> Python
 
 [官方文档](https://docs.python.org/zh-cn/3/library/index.html)
@@ -170,7 +180,7 @@ print(time.time()-start)
 
 ### <3> C++ TODO
 ### <4> 数据结构 TODO
-### <5> 数据库sql
+### <5> 数据库 SQL
 
 在线参考 [W3School](http://www.w3school.com.cn/sql/sql_syntax.asp)
 
@@ -184,6 +194,9 @@ print(time.time()-start)
 查询CS3121014的先修课的课程号 | select pno from pcourse where cno=="CS3121014";
 查询选修了全部课程的学生学号 | select Sno from student where Sno in (select Sno from sc group by Sno having count(\*)=(select count(\*) from course));
 查询选修了学号为“03051066”的学生所选全部课程的学生学号和姓名| select student.Sno ,student.Sname from student where student.Sno not in (select sc.Sno from sc where sc.Cno not in (Select sc.Cno from sc where sc.Sno=="03051066"));
+
+* **MySQL常用查询语法 [简书](https://www.jianshu.com/p/ad48ad439b16)**
+* **MySQL常用查询案例 [简书](https://www.jianshu.com/p/adc96e2b4b69)**
 
 
 ## 0x01 专业知识
@@ -239,6 +252,14 @@ print(time.time()-start)
 * 客户端发送一个`Finished`消息给服务器端，使用对称密钥加密这次通讯的一个散列值
 * 服务器端生成自己的 hash 值，然后解密客户端发送来的信息，检查这两个值是否对应。如果对应，就向客户端发送一个`Finished`消息，也使用协商好的对称密钥加密
 * 从现在开始，接下来整个 TLS 会话都使用对称秘钥进行加密，传输应用层（HTTP）内容。
+
+#### 4. [HTTP](https://juejin.im/post/5a8102e0f265da4e710f5910)
+
+#### 5. ARP
+
+#### 6. OSPF
+
+
 
 ### <1> 密码学
 
@@ -447,20 +468,136 @@ HTML是一种超文本标记语言，通过将一些字符特殊地对待来区�
 * cookie防盗。避免直接在cookie中泄露用户隐私，例如email、密码，等等；通过使cookie和系统IP绑定来降低cookie泄露后的危险。这样攻击者得到的cookie没有实际价值，很难拿来直接进行重放攻击。
 * 确认接收的内容被妥善地规范化，仅包含最小的、安全的Tag（没有JavaSeript），去掉任何对远程内容的引用（尤其是样式表和JavaScript），使用HTTPonly的cookie。
 
+
+
 #### 3. WAF 
 
 
 
-### <5> Linux二进制
+### <5> Linux二进制 TODO
+
+#### 1. 工具集
+
+binwalk、gdb、objdump、nasm、dd、pwntool
+
+
 
 ## 0x02 平台与架构
 
-### <1> 大数据平台 TODO
+### <1> 大数据平台
 
-#### 1. [mongodb](https://www.runoob.com/mongodb/mongodb-tutorial.html)
+#### 1. 数据库与文件系统
 
-#### 2. [redis](https://www.runoob.com/redis/redis-tutorial.html)
+* [mongodb](https://www.runoob.com/mongodb/mongodb-tutorial.html) 是一个基于分布式文件存储的数据库。由 C++ 语言编写。旨在为 WEB 应用提供可扩展的高性能数据存储解决方案。是一个介于关系数据库和非关系数据库之间的产品，是非关系数据库当中功能最丰富，最像关系数据库的。
+  * **Python 操作 [MongoDB](https://www.runoob.com/python3/python-mongodb.html)**
+* [redis](https://www.runoob.com/redis/redis-tutorial.html) 是一个开源的使用ANSI C语言编写、遵守BSD协议、支持网络、可基于内存亦可持久化的日志型、Key-Value数据库，并提供多种语言的API。它通常被称为数据结构服务器，因为值（value）可以是 字符串(String), 哈希(Hash), 列表(list), 集合(sets) 和 有序集合(sorted sets)等类型。
+  * **python 操作 [redis](https://www.jianshu.com/p/ffc93a407448)**
+* [hadoop](https://www.w3cschool.cn/hadoop/) 是一个开源框架，允许使用简单的编程模型在跨计算机集群的分布式环境中存储和处理大数据。它的设计是从单个服务器扩展到数千个机器，每个都提供本地计算和存储。
+  * **Python 海量数据处理之_[Hadoop](https://blog.csdn.net/xieyan0811/article/details/78866604)**
+  * **用 Python 玩转 Hadoop [简书](https://www.jianshu.com/p/70bd81b2956f)**
+* [Hive](https://blog.csdn.net/l1212xiao/article/details/80432759) 是基于Hadoop的一个数据仓库工具，可以将结构化的数据文件映射为一张数据库表，并提供类SQL查询功能。
+* [Kafka](https://www.tutorialspoint.com/apache_kafka/)是一个分布式，分区，复制的提交日志服务。它提供了类似于JMS的特性，但是在实现上完全不同，此外它并不是JMS规范的实现。kafka对消息保存时根据Topic进行归类，发送消息者成为Producer,消息接受者成为Consumer,此外kafka集群有多个kafka实例组成，每个实例()成为broker。无论是kafka集群，还是producer和consumer都依赖于zookeeper来保证系统可用性集群保存一些meta信息。[中文参考](http://www.aboutyun.com/thread-9341-1-1.html)
 
-#### 3. [hadoop](https://www.w3cschool.cn/hadoop/)
+#### 2. 大数据
 
-#### 4. [ELK](https://www.elastic.co/what-is/elk-stack)
+* 日志分析： [ELK](https://www.elastic.co/what-is/elk-stack) + FileBeats
+* 机器学习与深度学习平台：[Spark](https://www.tutorialspoint.com/apache_spark/)
+
+### <2> 数据分析工具
+
+#### 1. numpy 
+
+* [ENG doc](https://docs.scipy.org/doc/numpy/reference/)
+* [CN doc](https://www.numpy.org.cn/)
+
+NumPy的主要对象是同类型的多维数组。它是一张表，所有元素（通常是数字）的类型都相同，并通过正整数元组索引。在NumPy中，维度称为轴。轴的数目为rank。
+
+例如，3D空间中的点的坐标 `[1, 2, 1]` 是rank为1的数组，因为它具有一个轴。该轴的长度为3。在下面的示例中，该数组有2个轴。
+
+第一个轴（维度）的长度为2，第二个轴（维度）的长度为3。
+
+```python
+[[ 1., 0., 0.],
+[ 0., 1., 2.]]
+```
+
+NumPy的数组类被称为ndarray。别名为 `array`。 请注意，`numpy.array` 与标准Python库类 `array.array` 不同，后者仅处理一维数组并提供较少的功能。 `ndarray` 对象则提供更关键的属性：
+
+- **ndarray.ndim**：数组的轴（维度）的个数。在Python世界中，维度的数量被称为rank。
+- **ndarray.shape**：数组的维度。这是一个整数的元组，表示每个维度中数组的大小。对于有n行和m列的矩阵，shape将是(n,m)。因此，`shape`元组的长度就是rank或维度的个数 `ndim`。
+- **ndarray.size**：数组元素的总数。这等于shape的元素的乘积。
+- **ndarray.dtype**：一个描述数组中元素类型的对象。可以使用标准的Python类型创建或指定dtype。另外NumPy提供它自己的类型。例如numpy.int32、numpy.int16和numpy.float64。
+- **ndarray.itemsize**：数组中每个元素的字节大小。例如，元素为 `float64` 类型的数组的 `itemsize` 为8（=64/8），而 `complex32` 类型的数组的 `itemsize` 为4（=32/8）。它等于 `ndarray.dtype.itemsize` 。
+- **ndarray.data**：该缓冲区包含数组的实际元素。通常，我们不需要使用此属性，因为我们将使用索引访问数组中的元素。
+
+#### 2. [pandas](https://pandas.pydata.org/pandas-docs/stable/index.html)
+
+* 时间序列问题 [Doc](https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html)
+* 数据处理基础 [CSDN](https://blog.csdn.net/qq_16234613/article/details/64217337)
+
+#### 3. [scipy](https://docs.scipy.org/doc/scipy-1.3.0/reference/)
+
+建于NumPy之上，提供了一个用于在Python中进行科学计算的工具集：
+
+- 特殊函数 ([scipy.special](http://docs.scipy.org/doc/scipy/reference/special.html))
+- 积分 ([scipy.integrate](http://docs.scipy.org/doc/scipy/reference/integrate.html))
+- 最优化 ([scipy.optimize](http://docs.scipy.org/doc/scipy/reference/optimize.html))
+- 插值 ([scipy.interpolate](http://docs.scipy.org/doc/scipy/reference/interpolate.html))
+- 傅立叶变换 ([scipy.fftpack](http://docs.scipy.org/doc/scipy/reference/fftpack.html))
+- 信号处理 ([scipy.signal](http://docs.scipy.org/doc/scipy/reference/signal.html))
+- 线性代数 ([scipy.linalg](http://docs.scipy.org/doc/scipy/reference/linalg.html))
+- 稀疏特征值 ([scipy.sparse](http://docs.scipy.org/doc/scipy/reference/sparse.html))
+- 统计 ([scipy.stats](http://docs.scipy.org/doc/scipy/reference/stats.html))
+- 多维图像处理 ([scipy.ndimage](http://docs.scipy.org/doc/scipy/reference/ndimage.html))
+- 文件 IO ([scipy.io](http://docs.scipy.org/doc/scipy/reference/io.html))
+
+#### 4. matplotlib
+
+
+
+
+
+## 0x03 大数据与网络安全 Doing
+
+### <0> 大数据网络安全架构 : Zeek-Kafka+ELK
+
+[基础架构](https://www.freebuf.com/sectool/179757.html)
+
+### <1> 异常检测 : 离群点
+
+**场景**：对先有业务，从业务流量中具体分析数据，从数据的统计特征角度出发，检测数据离群点。
+
+* 异常检测的N种方法 - [阿里](https://mp.weixin.qq.com/s/kv-ZrOF4nnxXoQwFOodzjA)
+* 机器学习-异常检测算法（一）- [Isolation Forest](https://zhuanlan.zhihu.com/p/27777266)
+* 机器学习-异常检测算法（二）- [Local Outlier Factor](https://zhuanlan.zhihu.com/p/28178476)
+* 机器学习-异常检测算法（三）- [Principal Component Analysis](https://zhuanlan.zhihu.com/p/29091645)
+
+### <2> 攻击检测 : 具体问题具体分析
+
+**场景**：对已知网络攻击，具体分析其攻击流程和攻击行为所产生的数据，设计数据规则提取、处理、分类器。
+
+#### 1. 域名安全检测
+
+##### (1). DGA 检测
+
+##### (2). DNS隧道检测
+
+#### 2. Web服务与应用检测
+
+##### (1). SQL注入 检测
+
+##### (2). XSS 攻击 检测
+
+##### (3). webshell 检测
+
+### <3> 对抗检测 : GAN 的思想
+
+**场景**：黑客已知防御端使用了AI的检测方法，同理使用AI的方法绕过检测、对抗检测。
+
+`对AI模型的对抗` 与 `对攻击分析的对抗` 的本质区别是  `对AI模型本身的攻击` 与 `对检测手段的对抗`。
+
+**目的**：黑客寻求绕过检测的方法，检测寻求识别攻击变种的方法。
+
+#### 1. 对AI模型的攻击
+
+#### 2. 对攻击分析的对抗
