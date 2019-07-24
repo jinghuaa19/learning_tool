@@ -102,7 +102,7 @@ for game in combinations(teams, 2):
     print(game) # tuple
 ~~~
 
-#### X.提高python运行效率的方法
+#### X. 提高python运行效率的方法
 * 使用生成器，因为可以节约大量内存
 * 循环代码优化，避免过多重复代码的执行
 * 核心模块用Cython PyPy等，提高效率
@@ -352,6 +352,13 @@ MD5，SHA
 * 确定前K个点所在类别的出现频率
 * 返回前K个点中出现频率最高的类别作为测试数据的预测分类
 
+**例：**
+
+* 《Web安全之机器学习》K近邻算法检测异常操作 [原文1](https://blog.csdn.net/rosetta/article/details/79313297)、[原文2](https://blog.csdn.net/rosetta/article/details/79313414)
+* 《Web安全之机器学习》使用K近邻算法检测Rootkit [原文1](https://blog.csdn.net/weixin_39878297/article/details/83047479)、[原文2](https://blog.csdn.net/rongyongfeikai2/article/details/80790412)
+* [基于机器学习的WebShell检测方法与实现](https://www.freebuf.com/articles/web/181169.html)
+* [学习宝书使用K近邻算法检测异常操作、检测Rookit和WebShell](https://blog.csdn.net/qq_37865996/article/details/87711980)
+
 #### 2. 回归
 
 ##### (1).  [线性回归](https://www.jianshu.com/p/47ffb68f4f9f)
@@ -417,10 +424,15 @@ $$ min \sum^{K}_{i=1} \sum_{x \in C_{i}} dist (C_i , x)^2$$
 
 #### 6. [决策树与随机森林](https://zhuanlan.zhihu.com/p/30504716)
 
+* **决策树**：决策树(Decision Tree)是在已知各种情况发生概率的基础上，通过构成决策树来求取净现值的[期望](https://link.zhihu.com/?target=https%3A//baike.so.com/doc/5567468-5782614.html)值大于等于零的概率，评价项目风险，判断其可行性的决策分析方法，是直观运用概率分析的一种图解法。由于这种决策分支画成图形很像一棵树的枝干，故称决策树。决策树是一种基本的分类和回归方法，学习通常包含三个步骤：特征选择、决策树的生成和决策树的剪枝。在机器学习中，决策树是一个预测模型，他代表的是对象属性与对象值之间的一种映射关系。分类树(决策树)是一种十分常用的分类方法。[数据挖掘](https://link.zhihu.com/?target=https%3A//baike.so.com/doc/3186393-3357840.html)中决策树是一种经常要用到的技术，可以用于分析数据，同样也可以用来做预测。
+* **随即森林**：随机森林是一个包含多个[决策树](https://link.zhihu.com/?target=https%3A//baike.so.com/doc/5401081.html)的[分类器](https://link.zhihu.com/?target=https%3A//baike.so.com/doc/6614984.html)，并且其输出的类别是由个别树输出的类别的众数而定。Leo Breiman和Adele Cutler发展出推论出随机森林的[算法](https://baike.so.com/doc/2758411-2911336.html)。随机森林在过去几年一直是新兴的机器学习技术。它是基于非线性的决策树模型，通常能够提供准确的结果。然而，随机森林大多是黑盒子，经常难以解读和充分理解。深入介绍随机森林的基本原理，以更好地了解它们，这项工作是由[Ando Saabas](https://github.com/andosa/treeinterpreter)完成。可以在[GitHub上](https://github.com/gregtam/interpreting-decision-trees-and-random-forests)找到代码。
 
+**例：**
+
+* 
 
 ### <3> 深度学习 TODO
-#### 1.
+#### 1. 
 
 
 
@@ -518,26 +530,6 @@ Tensorflow [基础](https://github.com/aymericdamien/TensorFlow-Examples)
 * [ENG doc](https://docs.scipy.org/doc/numpy/reference/)
 * [CN doc](https://www.numpy.org.cn/)
 
-NumPy的主要对象是同类型的多维数组。它是一张表，所有元素（通常是数字）的类型都相同，并通过正整数元组索引。在NumPy中，维度称为轴。轴的数目为rank。
-
-例如，3D空间中的点的坐标 `[1, 2, 1]` 是rank为1的数组，因为它具有一个轴。该轴的长度为3。在下面的示例中，该数组有2个轴。
-
-第一个轴（维度）的长度为2，第二个轴（维度）的长度为3。
-
-```python
-[[ 1., 0., 0.],
-[ 0., 1., 2.]]
-```
-
-NumPy的数组类被称为ndarray。别名为 `array`。 请注意，`numpy.array` 与标准Python库类 `array.array` 不同，后者仅处理一维数组并提供较少的功能。 `ndarray` 对象则提供更关键的属性：
-
-- **ndarray.ndim**：数组的轴（维度）的个数。在Python世界中，维度的数量被称为rank。
-- **ndarray.shape**：数组的维度。这是一个整数的元组，表示每个维度中数组的大小。对于有n行和m列的矩阵，shape将是(n,m)。因此，`shape`元组的长度就是rank或维度的个数 `ndim`。
-- **ndarray.size**：数组元素的总数。这等于shape的元素的乘积。
-- **ndarray.dtype**：一个描述数组中元素类型的对象。可以使用标准的Python类型创建或指定dtype。另外NumPy提供它自己的类型。例如numpy.int32、numpy.int16和numpy.float64。
-- **ndarray.itemsize**：数组中每个元素的字节大小。例如，元素为 `float64` 类型的数组的 `itemsize` 为8（=64/8），而 `complex32` 类型的数组的 `itemsize` 为4（=32/8）。它等于 `ndarray.dtype.itemsize` 。
-- **ndarray.data**：该缓冲区包含数组的实际元素。通常，我们不需要使用此属性，因为我们将使用索引访问数组中的元素。
-
 #### 2. [pandas](https://pandas.pydata.org/pandas-docs/stable/index.html)
 
 * 时间序列问题 [Doc](https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html)
@@ -565,7 +557,7 @@ NumPy的数组类被称为ndarray。别名为 `array`。 请注意，`numpy.arra
 
 Python 实现 [词嵌入](https://github.com/buomsoo-kim/Word-embedding-with-Python)
 
-
+python自然语言处理 - NLTK
 
 
 
@@ -579,16 +571,24 @@ AI [基础](https://github.com/TarrySingh/Artificial-Intelligence-Deep-Learning-
 
 Tensorflow [基础](https://github.com/aymericdamien/TensorFlow-Examples)
 
-
-
 ### <1> 异常检测 : 离群点
 
 **场景**：对先有业务，从业务流量中具体分析数据，从数据的统计特征角度出发，检测数据离群点。
+
+#### 1. 异常检测方法与算法
 
 * 异常检测的N种方法 - [阿里](https://mp.weixin.qq.com/s/kv-ZrOF4nnxXoQwFOodzjA)
 * 机器学习-异常检测算法（一）- [Isolation Forest](https://zhuanlan.zhihu.com/p/27777266)
 * 机器学习-异常检测算法（二）- [Local Outlier Factor](https://zhuanlan.zhihu.com/p/28178476)
 * 机器学习-异常检测算法（三）- [Principal Component Analysis](https://zhuanlan.zhihu.com/p/29091645)
+
+#### 2. 网络行为异常检测
+
+* 《Web安全之机器学习》K近邻算法检测异常操作 [原文1](https://blog.csdn.net/rosetta/article/details/79313297)、[原文2](https://blog.csdn.net/rosetta/article/details/79313414)
+
+  黑客入侵服务器后，通常会通过系统漏洞提权，获得root权限。通过搜集Linux服务器的bash操作日志，通过训练识别出特定用户的操作习惯，然后进一步识别异常操作行为。
+
+* 
 
 ### <2> 攻击检测 : 具体问题具体分析
 
@@ -598,15 +598,43 @@ Tensorflow [基础](https://github.com/aymericdamien/TensorFlow-Examples)
 
 ##### (1). DGA 检测
 
-##### (2). DNS隧道检测
+##### (2). DNS 隧道检测
 
-#### 2. Web服务与应用检测
+##### (3). 恶意域名挖掘
+
+#### 2. Web 服务与应用检测
 
 ##### (1). SQL注入 检测
 
 ##### (2). XSS 攻击 检测
 
 ##### (3). webshell 检测
+
+* FreeBuff [基于机器学习的WebShell检测方法与实现](https://www.freebuf.com/articles/web/181169.html)
+* 《Web安全之机器学习》[使用K近邻算法检测WebShell](https://blog.csdn.net/weixin_39878297/article/details/83048202)
+
+#### 3. 恶意软件检测 - (TOL)
+
+- [深度学习在恶意软件检测中的应用](https://xz.aliyun.com/t/2447)
+- [恶意软件与数据分析](https://iami.xyz/AliSEC3/)
+- [利用机器学习进行恶意代码分类](http://drops.xmd5.com/static/drops/tips-8151.html)
+- [用机器学习检测Android恶意代码](http://drops.xmd5.com/static/drops/mobile-13428.html)
+- [Malware Detection in Executables Using Neural Networks](https://devblogs.nvidia.com/malware-detection-neural-networks/)
+- [基于深度学习的恶意样本行为检测(含源码)](https://www.freebuf.com/articles/system/182566.html)
+- [用机器学习进行恶意软件检测——以阿里云恶意软件检测比赛为例](https://xz.aliyun.com/t/3704)
+- [第二届微软恶意软件预测挑战赛初探](http://4o4notfound.org/index.php/archives/179/)
+- [DataCon大数据安全分析比赛冠军思路分享：方向二-恶意代码检测](https://zhuanlan.zhihu.com/p/64252076)
+
+#### 4. 入侵检测 - (TOL)
+
+- [利用机器学习检测HTTP恶意外连流量](https://www.freebuf.com/column/170483.html)
+- [ExecScent: Mining for New C&C Domains in Live Networks with Adaptive Control Protocol Templates](https://www.usenix.org/system/files/conference/usenixsecurity13/sec13-paper_nelms.pdf)
+- [MADE: Security Analytics for Enterprise Threat Detection](http://www.ccs.neu.edu/home/alina/papers/MADE.pdf)
+- [机器学习在互联网巨头公司实践](https://mp.weixin.qq.com/s/NFqUF824Rpr4g6wYWFpSNQ)
+- [机器学习在入侵检测方面的应用 - 基于ADFA-LD训练集训练入侵检测判别模型](https://www.cnblogs.com/LittleHann/p/7806093.html#_lab2_0_1)
+- [datacon比赛方向三-攻击源与攻击者分析writeup](https://github.com/ReAbout/datacon)
+
+
 
 ### <3> 对抗检测 : GAN 的思想
 
