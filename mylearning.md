@@ -590,7 +590,7 @@ Tensorflow [基础](https://github.com/aymericdamien/TensorFlow-Examples)
 
 * 
 
-### <2> 攻击检测 : 具体问题具体分析
+### <2-1> 攻击检测 : 具体问题具体分析
 
 **场景**：对已知网络攻击，具体分析其攻击流程和攻击行为所产生的数据，设计数据规则提取、处理、分类器。
 
@@ -598,20 +598,47 @@ Tensorflow [基础](https://github.com/aymericdamien/TensorFlow-Examples)
 
 ##### (1). DGA 检测
 
+- [使用fasttext进行DGA检测](https://iami.xyz/DGA-Detect/)
+- [机器学习实践-DGA检测](http://galaxylab.org/机器学习实践-dga检测/)
+
 ##### (2). DNS 隧道检测
 
-##### (3). 恶意域名挖掘
+- [使用CNN检测DNS隧道](https://github.com/BoneLee/dns_tunnel_dectect_with_CNN)
+- [DNS Tunnel隧道隐蔽通信实验 && 尝试复现特征向量化思维方式检测](https://www.cnblogs.com/LittleHann/p/8656621.html)
 
-#### 2. Web 服务与应用检测
+##### (3). 恶意域名挖掘  - (TOL)
+
+- [机器学习与威胁情报的融合：一种基于AI检测恶意域名的方法](https://www.freebuf.com/articles/es/187451.html)
+- [DataCon 2019: 1st place solution of malicious DNS traffic & DGA analysis](https://www.cdxy.me/?p=806)
+- [DataCon 9102: DNS Analysis](https://github.com/shyoshyo/Datacon-9102-DNS)
+- [Datacon DNS攻击流量识别 内测笔记](http://momomoxiaoxi.com/数据分析/2019/04/24/datacondns1/)
+
+#### 2. Web 服务与应用检测  - (TOL)
 
 ##### (1). SQL注入 检测
 
+- [三种特征向量对深度学习攻击检测的影响](https://manning23.github.io/2017/08/08/三种特征向量对深度学习攻击检测的影响/)
+
 ##### (2). XSS 攻击 检测
+
+- [机器学习识别XSS实践](https://www.cdxy.me/?p=773)
+- [使用深度学习检测XSS](http://webber.tech/posts/使用深度学习检测XSS/)
+- [使用深度学习检测XSS(续)](http://webber.tech/posts/使用深度学习检测XSS(续)/)
 
 ##### (3). webshell 检测
 
 * FreeBuff [基于机器学习的WebShell检测方法与实现](https://www.freebuf.com/articles/web/181169.html)
 * 《Web安全之机器学习》[使用K近邻算法检测WebShell](https://blog.csdn.net/weixin_39878297/article/details/83048202)
+* [基于机器学习的分布式webshell检测系统-特征工程（1）](https://www.s0nnet.com/archives/fshell-feature-1)
+* [深度学习PHP webshell查杀引擎demo](https://www.cdxy.me/?p=788)
+* [使用机器学习识别WebShell](https://github.com/lcatro/WebShell-Detect-By-Machine-Learning)
+* [基于机器学习的分布式Webshell检测系统](https://github.com/Lingerhk/fshell)
+* [基于机器学习的Webshell发现技术探索](https://mp.weixin.qq.com/s/1V0xcjH-6V5qJoJILP0pJQ)
+* [刘焱： Webshell 发现技术实战解析](http://gitbook.cn/books/5964d154cc597d3e0c08667c/index.html)
+* [安普诺张涛：再谈webshell检测](http://www.cnetsec.com/article/22593.html)
+* [新开始:webshell的检测](https://iami.xyz/New-Begin-For-Nothing/)
+* [基于机器学习的WebShell检测方法与实现(上)](https://www.freebuf.com/articles/web/181169.html)
+* [初探机器学习检测PHP Webshell](https://paper.seebug.org/526/)
 
 #### 3. 恶意软件检测 - (TOL)
 
@@ -636,7 +663,7 @@ Tensorflow [基础](https://github.com/aymericdamien/TensorFlow-Examples)
 
 
 
-### <3> 对抗检测 : GAN 的思想
+### <2-2> 对抗检测 : GAN 的思想
 
 **场景**：黑客已知防御端使用了AI的检测方法，同理使用AI的方法绕过检测、对抗检测。
 
@@ -647,3 +674,4 @@ Tensorflow [基础](https://github.com/aymericdamien/TensorFlow-Examples)
 #### 1. 对AI模型的攻击
 
 #### 2. 对攻击分析的对抗
+
