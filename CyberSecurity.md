@@ -226,6 +226,8 @@ TCP/IP | OSI
 
 [信息安全行业从业指南2.0](https://whale3070.github.io/view/2018/09/29/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E8%A1%8C%E4%B8%9A%E4%BB%8E%E4%B8%9A%E6%8C%87%E5%8D%972.0/) [GET] - 参考甲方方向
 
+[网络信息安全从业者面试指南（面试）](https://github.com/FeeiCN/SecurityInterviewQuestions) - 现状-面试
+
 [安全人员发展方向杂谈](https://zhuanlan.zhihu.com/p/54936058) [GET] - 参考安全数据分析部分
 
 [甲方安全](https://www.freebuf.com/articles/neopoints/156914.html) [GET] - 甲方乙方好像吵起来了
